@@ -1,0 +1,128 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<section class="container contact" id="contact">
+  <div class="back-to-home">
+    <a class="btn btn-primary" routerLink="/navbar">Back to Home</a>
+  </div>
+  <div class="contact-container">
+    <div class="main-title">
+      <h2>Contact <span>Me</span></h2>
+    </div>
+    <div class="contact-content-con">
+      <div class="left-contact">
+        <p style="text-align: center;">
+          If you have any queries regarding the website you can contact me at<br />
+          the below given informational form
+        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Location</span>
+            </div>
+            <p>Jajpur, Odisha</p>
+          </div>
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
+              <span>Email</span>
+            </div>
+            <p>soumya261412@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-user-graduate"></i>
+              <span>Education</span>
+            </div>
+            <p>Computer Science & Engineering</p>
+          </div>
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fa fa-phone fa-flip-horizontal"></i>
+              <span>Mobile Number</span>
+            </div>
+            <p>1234567891</p>
+          </div>
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-globe-africa"></i>
+              <span>Languages</span>
+            </div>
+            <p>English, Hindi, Odia</p>
+          </div>
+        </div>
+      </div>
+      <div class="right-contact">
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          class="contact-form"
+        >
+          <div class="input-control i-c-2">
+            <input type="text" formControlName="name" placeholder="YOUR NAME" />
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="YOUR EMAIL"
+            />
+          </div>
+          <div class="input-control">
+            <input
+              type="text"
+              formControlName="subject"
+              placeholder="ENTER SUBJECT"
+            />
+          </div>
+          <div class="input-control">
+            <textarea
+              formControlName="message"
+              cols="15"
+              rows="8"
+              placeholder="Message Here..."
+            ></textarea>
+          </div>
+          <div class="submit-btn">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+        <div
+          *ngIf="isSubmitted"
+          class="alert"
+          [ngClass]="{ success: isSuccess, error: !isSuccess }"
+        >
+          {{ isSuccess ? "Submission successful!" : "Submission failed!" }}
+        </div>
+      </div>
+      <div class="contact-icons">
+        <div class="contact-icon">
+          <a href="mailto:soumya261412@gmail.com" target="_blank">
+            <i class="fa fa-envelope"></i>
+          </a>
+          <a href="https://github.com/soumya-debug" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/soumya-ranjan-rout26"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>©Copyright by <a href=""></a></p>
+      </div>
+    </div>
+  </div>
+</section>
